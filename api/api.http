@@ -1,0 +1,22 @@
+### fallback
+GET http://localhost:8080/?kokgf=111&mkmgmf=555
+Accept: text/plain
+
+
+
+### sentmessage
+POST http://localhost:8080/sendmessage?agentid=1000002&token=123456qwer
+Content-Type: application/json
+
+{
+  "touser": "@all",
+  "msgtype": "text",
+  "agentid": 1000002,
+  "text": {
+    "content": "api test,\n<a href=\"http://\">hello</a>"
+  }
+}
+
+###
+
+

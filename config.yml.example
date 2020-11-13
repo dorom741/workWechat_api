@@ -1,0 +1,19 @@
+general:
+  listen:   #监听端口，默认：":8080"
+  loglevel: "debug"  # info / warning / error / debug，默认：info
+  ssl:  #是否启用ssl，默认：false
+  certpath:  #证书文件路径，默认 ：""
+  keypath:   #证书密钥文件路径，默认 ：""
+
+redis:
+  network:    #连接模式，默认："tcp"
+  server:  #redis连接地址，默认：127.0.0.1:6379
+  password:    #redis密码,若有
+  db:   #指定数据库，默认0
+
+qiyeinfo:
+  corpid:   # 企业微信的corpid
+  applist:
+    "123456":"abcdefg"
+  #应用的agentId和corpsecret，格式agentId:corpsecret，均以字符串格式
+
