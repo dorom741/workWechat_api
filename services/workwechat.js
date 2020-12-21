@@ -1,0 +1,5 @@
+function getAccessToken(corpid,corpsecret){
+    
+
+
+}
