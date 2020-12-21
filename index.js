@@ -28,3 +28,10 @@ async function handleRequest(request) {
     const resp = await r.route(request)
     return resp
 }
+
+
+
+function workerWechatHandler(request){
+    let req_json = await request.json()
+
+}
