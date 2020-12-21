@@ -2,8 +2,8 @@ import {kv} from "storage/KVstorage"
 
 function getAccessToken(corpid, corpsecret) {
     let url = `https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=${corpid}&corpsecret=${corpsecret}`
-    fetch(url).then(response => {
-        var resp_json = await response.json()
+    fetch(url).then(async response => {
+        const resp_json = await response.json();
         if (resp_json.errcode) {
             return 0
         }
@@ -22,8 +22,13 @@ function postMessage(accesstoken, postData) {
 
 }
 
-function storeAccessToken(corpid,accesstoken){
+async function storeAccessToken(corpid,accesstoken){
    return await kv.put(corpid,accesstoken,{expirationTtl:7200})
 
 }
 
+export default {
+    getAccessToken,
+    postMessage,
+    storeAccessToken
+}
