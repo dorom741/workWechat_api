@@ -1,5 +1,5 @@
 const Router = require('./router')
-
+// import { getAccessToken,postMessage} from "services/workwechat"
 /**
  * Example of how router can be used in an application
  *  */
@@ -19,7 +19,7 @@ async function handleRequest(request) {
     const r = new Router()
     // Replace with the appropriate paths and handlers
     // r.get('.*/bar', () => new Response('responding for /bar'))
-    // r.get('.*/foo', request => handler(request))
+    r.get('/foo', request => workerWechatHandler(request))
     // r.post('.*/foo.*', request => handler(request))
     // r.get('/demos/router/foo', request => fetch(request)) // return the response from the origin
 
@@ -31,7 +31,15 @@ async function handleRequest(request) {
 
 
 async function workerWechatHandler(request){
-    let req_json = await request.json()
+    let token =  request.headers.get("token") != null? request.headers.get("token"):new URL(request.url).searchParams.get("token")
+    if(!token){
+        return new Response("missing token")
+    }
+    let text = await WORKWECHAT.get("test")
+    return new Response(text)
+    // let req_json = await request.text()
+    
+
 
 
 }
