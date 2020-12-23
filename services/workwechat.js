@@ -1,4 +1,3 @@
-import {kv} from "storage/KVstorage"
 
 function getAccessToken(corpid, corpsecret) {
     let url = `https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=${corpid}&corpsecret=${corpsecret}`
@@ -15,20 +14,14 @@ function getAccessToken(corpid, corpsecret) {
 
 function postMessage(accesstoken, postData) {
     let url = `https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=${accesstoken}`
-    fetch(url, { method: "POST", headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(postData) })
+    fetch(url, { method: "POST", headers: { 'Content-Type': 'application/json' }, body: postData })
     .then(response=>{
       return response
     })
 
 }
 
-async function storeAccessToken(corpid,accesstoken){
-   return await kv.put(corpid,accesstoken,{expirationTtl:7200})
-
-}
-
 export default {
     getAccessToken,
     postMessage,
-    storeAccessToken
 }
