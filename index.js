@@ -1,5 +1,5 @@
 const Router = require('./router')
-import { getAccessToken, postMessage } from "./services/workwechat"
+import { getAccessToken, postMessage } from "./services/workwechat.js"
 /**
  * Example of how router can be used in an application
  *  */
