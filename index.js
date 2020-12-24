@@ -38,8 +38,10 @@ async function workerWechatHandler(request) {
     try {
         let req_json = await request.json()
         let agentid = req_json.agentid
+        
         const corpsecret = await WORKWECHAT.get(agentid + '_agentid')
         let access_token = await WORKWECHAT.get(agentid + '_accessToken')
+       
         if (access_token === null) {
             access_token = await getAccessToken(corpsecret)
             await WORKWECHAT.put(agentid + "_accessToken", access_token, { expirationTtl: 7000 })
