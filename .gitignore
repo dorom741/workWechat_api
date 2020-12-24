@@ -4,4 +4,4 @@ worker/
 package-lock.json
 .idea
 dist
-wrangle.toml
+wrangler.toml
