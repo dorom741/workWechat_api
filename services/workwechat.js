@@ -7,7 +7,7 @@ async function getAccessToken(corpsecret) {
 }
 
 
-function postMessage(accesstoken, postData) {
+async function postMessage(accesstoken, postData) {
     const url = `https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=${accesstoken}`
     var response = await fetch(url, { method: "POST", headers: { 'Content-Type': 'application/json' }, body: postData })
     return response
