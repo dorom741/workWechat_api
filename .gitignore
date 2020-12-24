@@ -3,4 +3,5 @@ worker/
 .cargo-ok
 package-lock.json
 .idea
-dist/
+dist
+wrangle.toml
