@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write '**/*.{js,css,json,md}'",
         "dev": "wrangler dev",
-        "publish":" wrangler  publish"
+        "preview": "wrangler preview",
+        "publish": " wrangler  publish"
     },
     "author": "",
     "license": "ISC",
@@ -15,6 +16,7 @@
         "prettier": "^1.17.0"
     },
     "dependencies": {
-        "serverless-cloudflare-workers": "^1.2.0"
+        "node-2fa": "^2.0.2",
+        "serverless-cloudflare-workers": "^1.2.0",
     }
 }
