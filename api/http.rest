@@ -3,10 +3,27 @@ POST http://127.0.0.1:8787/message?token=fdndf
 Content-Type: application/json
 
 {
-   "touser" : "@all",
-   "msgtype" : "text",
-   "agentid" : 1000002,
-   "text" : {
-       "content" : "hello"
-   }
+  "touser": "@all",
+  "msgtype": "text",
+  "agentid": 1000002,
+  "text": {
+    "content": "hello"
+  }
 }
+
+###
+POST  https://127.0.0.1:8787/2fa?password=test
+Content-Type: application/json
+
+{
+  "name": "test",
+  "secret": "CL2Z4QOJPJWEAAQG"
+}
+
+
+###
+GET  http://127.0.0.1:8787/2fa?name=test&password=test
+
+###
+GET  http://127.0.0.1:8787/2fa?password=test
+
